@@ -97,9 +97,10 @@ body {
   letter-spacing: .01em;
 }
 .nav-tab:hover { color: var(--text); }
-.nav-tab.active[data-tab="log"] { color: var(--cal); border-bottom-color: var(--cal); }
-.nav-tab.active[data-tab="a"]   { color: #2b7de9; border-bottom-color: #2b7de9; }
-.nav-tab.active[data-tab="b"]   { color: #2b7de9; border-bottom-color: #2b7de9; }
+.nav-tab.active[data-tab="log"]    { color: var(--cal); border-bottom-color: var(--cal); }
+.nav-tab.active[data-tab="a"]      { color: #2b7de9; border-bottom-color: #2b7de9; }
+.nav-tab.active[data-tab="b"]      { color: #2b7de9; border-bottom-color: #2b7de9; }
+.nav-tab.active[data-tab="target"] { color: var(--pro); border-bottom-color: var(--pro); }
 
 /* ── Tab panes ── */
 .tab-pane          { display: none; }
@@ -389,6 +390,7 @@ body {
     <button class="nav-tab active" data-tab="log" onclick="switchTab('log')">Log</button>
     <button class="nav-tab" data-tab="a" onclick="switchTab('a')">Workout A</button>
     <button class="nav-tab" data-tab="b" onclick="switchTab('b')">Workout B</button>
+    <button class="nav-tab" data-tab="target" onclick="switchTab('target')">Physique</button>
   </div>
 </nav>
 
@@ -462,6 +464,133 @@ body {
     <p>Tap any exercise to expand. Read the card before your first set.</p>
   </div>
   <div class="w-inner" id="workout-b-inner"></div>
+</div>
+
+<!-- ─── PHYSIQUE TARGET PANE ─── -->
+<div id="pane-target" class="tab-pane" style="max-width:680px;margin:0 auto;padding:24px 16px 48px;">
+
+  <!-- Recomp formula banner -->
+  <div style="background:linear-gradient(135deg,#1e3a5f 0%,#2d1b69 100%);border-radius:16px;padding:24px 20px;margin-bottom:24px;color:#fff;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93c5fd;margin-bottom:8px;">The formula</div>
+    <div style="font-size:15px;line-height:1.7;font-weight:500;">
+      <span style="background:#1e3a5f;border:1px solid #3b82f6;border-radius:8px;padding:2px 10px;color:#60a5fa;font-weight:700;">9600 kJ</span>
+      &nbsp;+&nbsp;
+      <span style="background:#2d1b69;border:1px solid #7c3aed;border-radius:8px;padding:2px 10px;color:#a78bfa;font-weight:700;">144g protein</span>
+      &nbsp;+&nbsp;
+      <span style="background:#064e3b;border:1px solid #059669;border-radius:8px;padding:2px 10px;color:#34d399;font-weight:700;">A/B split × 3/wk</span>
+    </div>
+    <div style="margin-top:12px;font-size:13px;color:#cbd5e1;line-height:1.6;">
+      Recomp zone: muscle builds while body fat drops simultaneously. No bulk/cut cycles. Broad shoulders = V-taper without needing huge mass. At 18-20% BF + true beginner, this is exactly where you want to be.
+    </div>
+  </div>
+
+  <!-- Timeline cards -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+
+    <!-- 6-month target -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#0f172a,#1e3a5f);padding:14px 16px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#60a5fa;margin-bottom:4px;">6-month target</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;">Tom Holland</div>
+        <div style="font-size:12px;color:#93c5fd;margin-top:2px;">Homecoming (2017)</div>
+      </div>
+      <!-- Image slot — drop your screenshot here -->
+      <div id="img-6mo" style="height:180px;background:var(--surface2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid var(--border);">
+        <div style="font-size:32px;">📸</div>
+        <div style="font-size:12px;color:var(--muted);text-align:center;padding:0 12px;">Drop the Tom Holland Homecoming photo here<br>and tell Claude to embed it</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;">Lean · athletic · ~8–9% BF · swimmer's build. Relatively modest muscle volume with high definition. ~173cm — your exact height. Close to current starting point, significantly more defined.</div>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="padding:2px 8px;background:var(--cal-bg);color:var(--cal);border-radius:10px;font-size:11px;font-weight:600;">~70–72 kg</span>
+          <span style="padding:2px 8px;background:var(--hit-bg);color:var(--hit);border-radius:10px;font-size:11px;font-weight:600;">~8–9% BF</span>
+          <span style="padding:2px 8px;background:var(--pro-bg);color:var(--pro);border-radius:10px;font-size:11px;font-weight:600;">6 months</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18-24 month target -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#1a0533,#2d1b69);padding:14px 16px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a78bfa;margin-bottom:4px;">18–24 month target</div>
+        <div style="font-size:17px;font-weight:800;color:#fff;">Tom Holland</div>
+        <div style="font-size:12px;color:#c4b5fd;margin-top:2px;">Brand New Day (2026)</div>
+      </div>
+      <!-- Image slot -->
+      <div id="img-24mo" style="height:180px;background:var(--surface2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid var(--border);">
+        <div style="font-size:32px;">📸</div>
+        <div style="font-size:12px;color:var(--muted);text-align:center;padding:0 12px;">Drop the Tom Holland Brand New Day photo here<br>and tell Claude to embed it</div>
+      </div>
+      <div style="padding:12px 14px;">
+        <div style="font-size:12px;color:var(--muted);line-height:1.6;">His most muscular. +4kg via creatine + 80% diet focus specifically for this film. Fuller chest, rounder shoulders, bigger arms. ~74–78 kg. Not the extreme shredded look — athletic full.</div>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;">
+          <span style="padding:2px 8px;background:var(--cal-bg);color:var(--cal);border-radius:10px;font-size:11px;font-weight:600;">74–78 kg</span>
+          <span style="padding:2px 8px;background:var(--hit-bg);color:var(--hit);border-radius:10px;font-size:11px;font-weight:600;">~10–12% BF</span>
+          <span style="padding:2px 8px;background:var(--pro-bg);color:var(--pro);border-radius:10px;font-size:11px;font-weight:600;">18–24 months</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress tracker -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin-bottom:16px;">
+    <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px;">Weight progress</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
+      <div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Start</div>
+        <div style="font-size:20px;font-weight:800;color:var(--text);">66.5</div>
+        <div style="font-size:10px;color:var(--faint);">11 Aug</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Now</div>
+        <div style="font-size:20px;font-weight:800;color:var(--cal);">67.7</div>
+        <div style="font-size:10px;color:var(--faint);">19 Aug</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">6mo aim</div>
+        <div style="font-size:20px;font-weight:800;color:var(--pro);">70–72</div>
+        <div style="font-size:10px;color:var(--faint);">~Feb 2027</div>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Final aim</div>
+        <div style="font-size:20px;font-weight:800;color:var(--hit);">74–76</div>
+        <div style="font-size:10px;color:var(--faint);">~Aug 2027+</div>
+      </div>
+    </div>
+    <!-- Progress bar -->
+    <div style="margin-top:14px;">
+      <div style="height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;">
+        <div style="height:100%;width:12%;background:linear-gradient(90deg,var(--cal),var(--pro));border-radius:3px;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--faint);">
+        <span>66.5 kg</span><span>74–76 kg goal</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Structural advantages -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;">
+    <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:10px;">Your structural advantages</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--cal);margin-top:5px;flex-shrink:0;"></div>
+        <div style="font-size:13px;color:var(--muted);"><strong style="color:var(--text);">Broad/wide shoulders</strong> — creates V-taper without needing huge mass. Already noted by clothing store staff. Same structure as Tom Holland.</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--pro);margin-top:5px;flex-shrink:0;"></div>
+        <div style="font-size:13px;color:var(--muted);"><strong style="color:var(--text);">Peak testosterone at 18</strong> — best possible window for beginner gains. Muscle built now stays.</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--hit);margin-top:5px;flex-shrink:0;"></div>
+        <div style="font-size:13px;color:var(--muted);"><strong style="color:var(--text);">True beginner baseline</strong> — newbie gains are real. Accelerated response guaranteed for 6–12 months.</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:6px;height:6px;border-radius:50%;background:var(--act);margin-top:5px;flex-shrink:0;"></div>
+        <div style="font-size:13px;color:var(--muted);"><strong style="color:var(--text);">Creatine already loaded</strong> — consistent since ~1 Jul 2026. Adds ~3–4% strength in first months.</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
